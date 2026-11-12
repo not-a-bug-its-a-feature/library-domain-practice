@@ -38,11 +38,6 @@ dependencies {
 	// SQL Logging
 	runtimeOnly("p6spy:p6spy:3.9.1")
 
-	// Spring Modulith
-	implementation(platform("org.springframework.modulith:spring-modulith-bom:2.0.9"))
-	implementation("org.springframework.modulith:spring-modulith-starter-core")
-	testImplementation("org.springframework.modulith:spring-modulith-starter-test")
-
 	// Testing
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
