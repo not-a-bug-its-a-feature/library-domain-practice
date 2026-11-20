@@ -1,4 +1,6 @@
 package ltwrld.member.application.command;
 
-public record CreateMemberTypeCommand() {
+public record CreateMemberTypeCommand(
+        String name
+) {
 }

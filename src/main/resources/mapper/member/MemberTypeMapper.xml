@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ltwrld.member.adapter.out.persistence.MemberTypeMapper">
+    <resultMap id="memberTypeResultMap" type="ltwrld.member.adapter.out.persistence.MemberTypeEntity">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <insert id="insert">
+        INSERT INTO member_types (
+            id,
+            name
+        )
+        VALUES (
+            #{id},
+            #{name}
+        )
+    </insert>
+</mapper>

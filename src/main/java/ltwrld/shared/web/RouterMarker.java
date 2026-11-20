@@ -1,4 +1,3 @@
 package ltwrld.shared.web;
 
-public interface RouterMarker {
-}
+public interface RouterMarker { }

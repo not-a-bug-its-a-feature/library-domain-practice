@@ -9,12 +9,15 @@ import org.springframework.web.servlet.function.RouterFunctions;
 import org.springframework.web.servlet.function.ServerResponse;
 
 @Configuration
-public class MemberTypeRouter implements RouterMarker {
+public class MemberRouter implements RouterMarker {
     @Bean
-    public RouterFunction<ServerResponse> memberRoutes(MemberTypeHandler handler) {
+    public RouterFunction<ServerResponse> memberRoutes(
+            MemberTypeHandler handler
+    ) {
         return RouterFunctions.route()
-                .path("/api/member",
-                        builder -> builder.POST("", handler::createMemberType)
-                ).filter(new DefaultRouterFilter()).build();
+                .path("/api/member-types", builder -> builder
+                        .POST("", handler::createMemberType)
+                )
+                .filter(new DefaultRouterFilter()).build();
     }
 }

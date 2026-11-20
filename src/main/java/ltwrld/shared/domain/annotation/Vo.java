@@ -1,4 +1,9 @@
 package ltwrld.shared.domain.annotation;
 
-public interface Vo {
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Documented
+public @interface Vo {
 }

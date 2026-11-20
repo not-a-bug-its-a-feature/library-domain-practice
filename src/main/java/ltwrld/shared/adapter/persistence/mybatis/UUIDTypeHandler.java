@@ -1,4 +1,4 @@
-package ltwrld.shared.config;
+package ltwrld.shared.adapter.persistence.mybatis;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

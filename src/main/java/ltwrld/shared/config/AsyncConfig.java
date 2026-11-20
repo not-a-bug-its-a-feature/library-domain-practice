@@ -1,4 +1,4 @@
-package ltwrld.component.config;
+package ltwrld.shared.config;
 
 import org.springframework.boot.task.ThreadPoolTaskExecutorBuilder;
 import org.springframework.context.annotation.Bean;
