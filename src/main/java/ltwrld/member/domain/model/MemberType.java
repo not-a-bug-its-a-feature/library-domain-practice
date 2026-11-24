@@ -1,20 +1,22 @@
-package ltwrld.member.domain;
+package ltwrld.member.domain.model;
+
+import ltwrld.member.domain.model.value.MemberTypeName;
 
 import java.time.Instant;
 import java.util.UUID;
 
 public class MemberType {
     private final UUID id;
-    private String name;
+    private MemberTypeName name;
     private Instant createdAt;
     private Instant updatedAt;
 
-    public MemberType(UUID id, String name) {
+    public MemberType(UUID id, MemberTypeName name) {
         this.id = id;
         this.name = name;
     }
 
-    public void changeName(String name) {
+    public void changeName(MemberTypeName name) {
         this.name = name;
     }
 
@@ -22,7 +24,7 @@ public class MemberType {
         return id;
     }
 
-    public String name() {
+    public MemberTypeName name() {
         return name;
     }
 
