@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+/**
+ * リクエストDTOの有効性を検査
+ */
 @Component
 public class RequestValidator {
     private final Validator validator;
@@ -16,6 +19,13 @@ public class RequestValidator {
         this.validator = validator;
     }
 
+    /**
+     * リクエストDTOを検証しエラーがある場合は例外
+     * @param target　検証対象のDTO
+     * @param errorCode　エラー時のエラーコード
+     * @param <T>　DTO Type
+     * @throws ValidationException 有効性エラーが発生した場合
+     */
     public <T> void validate(T target, ErrorCode errorCode) {
         Set<ConstraintViolation<T>> violations = validator.validate(target);
         if (violations.isEmpty()) {

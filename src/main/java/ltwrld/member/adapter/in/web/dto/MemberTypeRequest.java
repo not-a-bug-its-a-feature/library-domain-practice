@@ -7,7 +7,7 @@ import ltwrld.shared.web.annotation.Dto;
 
 @Dto
 public record MemberTypeRequest(
-        @NotBlank(message = MemberTypeName.NULL_MESSAGE)
+        @NotBlank(message = MemberTypeName.REQUIRED_MESSAGE)
         @Size(
                 max = MemberTypeName.MAX_LENGTH,
                 message = MemberTypeName.TOO_LONG_MESSAGE

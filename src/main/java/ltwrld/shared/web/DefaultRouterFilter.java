@@ -1,6 +1,5 @@
 package ltwrld.shared.web;
 
-import ltwrld.shared.exception.DomainException;
 import ltwrld.shared.exception.ValidationException;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
@@ -8,10 +7,20 @@ import org.springframework.http.MediaType;
 import org.springframework.web.servlet.function.*;
 
 import java.time.Instant;
-import java.util.Map;
 
+/**
+ * router処理の共通filter
+ * responseの共通形式への変換と有効性エラー処理
+ */
 public class DefaultRouterFilter
     implements HandlerFilterFunction<ServerResponse, ServerResponse> {
+    /**
+     * Handlerの実行結果を処理し必要に応じて共通response形式に変換
+     * @param request　Http request
+     * @param next 次に実行するhandler
+     * @return 共通形式に変換されたresponse or 元のresponse
+     * @throws Exception handlerの実行中に例外が発生した場合
+     */
     @Override
     public ServerResponse filter(
             ServerRequest request,
@@ -50,6 +59,12 @@ public class DefaultRouterFilter
         }
     }
 
+    /**
+     * 共通response形式へ変換をskipするかどうか判定
+     * @param body　response body
+     * @param response handlerのresponse
+     * @return 変換をskipする場合true
+     */
     private boolean shouldSkipWrapping(Object body, ServerResponse response) {
         if (body instanceof Response || body instanceof Resource) {
             return true;

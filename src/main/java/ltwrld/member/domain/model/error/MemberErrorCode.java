@@ -3,7 +3,7 @@ package ltwrld.member.domain.model.error;
 import ltwrld.shared.exception.ErrorCode;
 
 public enum MemberErrorCode implements ErrorCode {
-    MEMBER_TYPE_INVALID("MEMBER-TYPE-INVALID", "member error")
+    MEMBER_TYPE_INVALID("MEMBER-TYPE-INVALID", "不正な会員種別値です。")
     ;
 
     private final String code;
